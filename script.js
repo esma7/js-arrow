@@ -44,37 +44,41 @@
 
 
 
-const array = ["Eli", "Veli", "Sabir", "Mirze", "Nubar", "Aygul", "Mezahir"];
+ const array = ["Eli", "Veli", "Sabir", "Mirze", "Nubar", "Aygul", "Mezahir"];
 
-let userName = 0;
+ let userName = 0;
 
 
-const userAdd = (item, addData) =>{
-    for(let index in item){
-        if(addData == " " || addData == "null"){
-            console.log("Data bosdur");
-            break;
-        } else if (item[index] == addData) {
-            userName = 1;           
+ const userAdd = (item, addData) =>{
+    if(addData == " " || addData == "null"){
+     console.log("Data bosdur");                  
+    } 
+     else{
+        for(let index in item){
+            if (item[index] == addData) {
+                userName = 1;           
+             }                
+        
         } 
-      
-    }
 
-    if(userName == 0){
-        if(addData != "null" && addData != " "){
+         if(userName == 0){
+            
             array.push(addData)
             console.log(`${addData} ugurla elave olundu`);
-        }       
+                    
+                    
+        } 
+        else{
+            console.log(`${addData} artiq movcuddur`);
+        }
+                       
         
-    } 
-    else{
-        console.log(`${addData} artiq movcuddur`);
-    }
     
+    }
     console.log(item);
 }
 
-userAdd(array,"Eli");
+userAdd(array,"Sara");
 
 
 
